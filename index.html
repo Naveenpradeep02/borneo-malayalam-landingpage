@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>borneo herbs</title>
-    <link rel="shortcut icon" href="./img/logof.png" type="image/x-icon" />
+    <title>Borneo Herbs</title>
+    <!-- css -->
+    <link rel="shortcut icon" href="./images/logof 1.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <!--  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -12,283 +16,307 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", sans-serif;
-      }
-
-      body {
-        background-color: #fff;
-        color: #222;
-      }
-
-      header {
-        background-color: #d88f1b;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        flex-wrap: wrap;
-      }
-
-      .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-      }
-      .logo img {
-        width: 100px;
-        margin-left: 50px;
-      }
-      nav {
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      nav ul {
-        display: flex;
-        list-style: none;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      nav ul li {
-        color: white;
-        cursor: pointer;
-        font-weight: 500;
-        transition: 0.2s;
-      }
-      nav ul li a {
-        color: white;
-        cursor: pointer;
-        font-weight: 500;
-        transition: 0.2s;
-        text-decoration: none;
-      }
-      nav ul li a:hover {
-        text-decoration: underline;
-      }
-
-      .hero {
-        background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.39) 50%,
-            rgba(0, 0, 0, 0.3) 100%
-          ),
-          url("./img/image\ 60.png");
-        background-size: cover;
-        background-position: center;
-        height: 60vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        padding: 2rem;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .breadcrumb {
-        font-size: 1rem;
-        color: #eee;
-      }
-
-      .content {
-        width: 80%;
-        padding: 2rem;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      .imgs {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .imgs img {
-        width: 100%;
-      }
-      .content p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        margin-top: 50px;
-      }
-
-      .btn-buy {
-        background: linear-gradient(to right, #00c6ff, #0072ff);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        position: fixed;
-        right: 30px;
-        bottom: 30px;
-      }
-      .l-btn {
-        background: linear-gradient(to right, #00c6ff, #0072ff);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        text-decoration: none;
-        margin-top: 20px;
-      }
-      .btn-buy:hover {
-        background: linear-gradient(to right, #0072ff, #00c6ff);
-      }
-      .float-container {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        display: none; /* Hidden by default */
-        justify-content: space-between;
-        padding: 10px 20px;
-        z-index: 9999;
-        display: flex; /* Use flexbox for layout */
-      }
-
-      .left a,
-      .right a {
-        text-decoration: none;
-        margin-right: 15px;
-        font-weight: bold;
-        color: #333;
-      }
-
-      .left a:last-child {
-        margin-right: 0;
-      }
-      .float-container a {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        margin-bottom: 10px;
-      }
-      .float-container a.buy {
-        width: fit-content;
-        background-color: green;
-        border-radius: 12px;
-        font-size: 14px;
-        padding: 5px 10px;
-      }
-      .whats {
-        background-color: rgb(67, 252, 67);
-      }
-      .float-container a i {
-        color: #fff;
-      }
-      .up {
-        background-color: #333;
-      }
-      .phone {
-        background-color: #25669c;
-      }
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        nav {
-          width: 100%;
-          margin-top: 1rem;
-          display: none;
-        }
-
-        nav ul {
-          flex-direction: column;
-          width: 100%;
-          gap: 0.5rem;
-        }
-        .logo img {
-          width: 100px;
-          margin-left: 20px;
-        }
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .content p {
-          font-size: 1rem;
-          margin-bottom: 150px;
-        }
-        .content {
-          width: 80%;
-          padding: 2rem;
-          margin: auto;
-          display: grid;
-          grid-template-columns: 1fr;
-        }
-        .content p {
-          margin-top: 20px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .btn-buy {
-          font-size: 1rem;
-        }
-      }
-    </style>
   </head>
   <body>
+    <!-- Header -->
     <header>
-      <div class="logo"><img src="./img/logof.png" alt="" /></div>
+      <div class="container">
+        <div class="logo">
+          <a href="https://borneoherbs.in/malayalam"
+            ><img src="./images/logof 1.png" alt="Borneo Herbs Logo"
+          /></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+              <a href="https://borneoherbs.in/malayalam">HOME</a>
+            </li>
+            <li>
+              <a href="#ingredients">INGREDIENTS</a>
+            </li>
+            <li>
+              <a href="https://borneoherbs.in/malayalam">HOW TO USE ?</a>
+            </li>
+            <li>
+              <a href="https://borneoherbs.in/malayalam">HOW ITS WORK ?</a>
+            </li>
+            <li>
+              <a href="#buy">HOW TO BUY ?</a>
+            </li>
+            <li>
+              <a href="./">Language</a>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-btn">
+          <div class="menu-open" onclick="OpenMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="menu-close" onclick="CloseMenu()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-menu">
       <nav>
         <ul>
-          <li><a href="https://borneoherbs.in/">HOME</a></li>
-          <li><a href="https://borneoherbs.in/">INGREDIENTS</a></li>
-          <li><a href="https://borneoherbs.in/">HOW TO USE?</a></li>
-          <li><a href="https://borneoherbs.in/">HOW IT WORK?</a></li>
-          <li><a href="https://borneoherbs.in/">HOW TO BUY?</a></li>
-          <li><a href="https://borneoherbs.in/">CONTACT US</a></li>
+          <li>
+            <a href="https://borneoherbs.in/malayalam">HOME</a>
+          </li>
+          <li>
+            <a href="https://borneoherbs.in/malayalam">INGREDIENTS</a>
+          </li>
+          <li>
+            <a href="#Howuse">HOW TO USE ?</a>
+          </li>
+          <li>
+            <a href="https://borneoherbs.in/malayalam">HOW ITS WORK ?</a>
+          </li>
+          <li>
+            <a href="https://borneoherbs.in/malayalam">HOW TO BUY ?</a>
+          </li>
+          <li>
+            <a href="https://borneoherbs.in/">Language</a>
+          </li>
         </ul>
       </nav>
-    </header>
-
-    <section class="hero">
-      <h1>Malyasia Herbal Coffee</h1>
-    </section>
-
-    <section class="content">
-      <div class="imgs">
-        <img
-          src="./img/WhatsApp Image 2025-05-29 at 10.33.10_444f892e.jpg"
-          alt=""
-        />
+    </div>
+    <!-- Header -->
+    <!-- Home -->
+    <div class="hero" id="Home">
+      <div class="hero-text">
+        <div class="text-1 active">
+          <h2>MALAYALAM/മലയാളം.</h2>
+          <a
+            href="https://51pejg-ia.myshopify.com/products/kalimantan-natural-herbal-coffee-pack-of-10"
+            class="btn"
+            ><span></span>Buy Now <span></span
+          ></a>
+        </div>
+        <div class="text-2">
+          <h2>MALAYALAM/മലയാളം</h2>
+          <a
+            href="https://51pejg-ia.myshopify.com/products/kalimantan-natural-herbal-coffee-pack-of-10"
+            class="btn"
+            ><span></span>Buy Now <span></span
+          ></a>
+        </div>
       </div>
-      <p>
-        മലേഷ്യയിലും മറ്റ് തെക്കുകിഴക്കൻ ഏഷ്യൻ രാജ്യങ്ങളിലും വളരെ പ്രചാരമുള്ള
-        ഹെർബൽ കോഫി ഇപ്പോൾ ഇന്ത്യയിലും ലഭ്യമാണ്! നിങ്ങൾക്ക് അവസരം ലഭിച്ചാൽ, ഈ
-        നാട്ടുകാർ ഈ കാപ്പിയെ വാഴ്ത്തിപ്പാടുന്നത് കേൾക്കാം. സന്തോഷത്തിന്റെ നിമിഷം
-        അനുഭവിക്കാൻ നിങ്ങൾക്കും താൽപ്പര്യമുണ്ടെങ്കിൽ, അതിനെക്കുറിച്ച്
-        കൂടുതലറിയാൻ 'കൂടുതലറിയുക' ബട്ടണിൽ ക്ലിക്കുചെയ്യുക<br /><br />
-
-        <a href="https://borneoherbs.in/malayalam" class="l-btn">Learn More</a>
+    </div>
+    <!-- Home -->
+    <div class="section section5">
+      <div class="container">
+        <div class="box2">
+          <img src="./images/s1.jpg" alt="" />
+        </div>
+        <div class="box1">
+          <p>
+            മനുഷ്യ പരിണാമം മുതൽ ഏതൊരു മനുഷ്യനും പുരുഷത്വം വളരെ സെൻസിറ്റീവ് ആയ
+            ഒരു കാര്യമാണ്. യോഗ്യരായവരുടെ അതിജീവനം എന്ന ആശയം എല്ലാ
+            കാലഘട്ടങ്ങളിലും നിലനിന്നിട്ടുണ്ട്. എന്നാൽ ഈ പുരുഷത്വം തന്നെ
+            ഗുരുതരമായ ഭീഷണി നേരിടുന്നു. ഒരു നിശ്ചിത ജൈവ ഘടികാരമില്ലാത്ത
+            ജീവിതശൈലി, മായം ചേർക്കൽ, സിന്തറ്റിക് നിറങ്ങൾ, രാസ സുഗന്ധങ്ങൾ,
+            കീടനാശിനികളുടെ വർദ്ധിച്ച ഉപയോഗം, പ്രിസർവേറ്റീവുകൾ, വായുസഞ്ചാരമുള്ള
+            പാനീയങ്ങൾ, കഴിക്കാൻ തയ്യാറായ ഭക്ഷണങ്ങൾ, പുകയില, മദ്യം, ബ്രോയിലർ
+            കോഴികളിൽ നിന്നുള്ള കോഴി, മലിനീകരണം. <br />
+            . വാസ്തവത്തിൽ, പട്ടിക ഒരിക്കലും പൂർണ്ണമാക്കാൻ കഴിയില്ല, ഇത് പലതരം
+            ആരോഗ്യ പ്രശ്നങ്ങൾക്ക് കാരണമായിട്ടുണ്ട്. അതിലൊന്നാണ് ലൈംഗിക ആരോഗ്യം,
+            അത് പരസ്യമായി ചർച്ച ചെയ്യപ്പെടുകയോ അംഗീകരിക്കപ്പെടുകയോ
+            ചെയ്യുന്നില്ല, പക്ഷേ അത് മനുഷ്യ പരിണാമത്തിന്റെ ഏറ്റവും പ്രധാനപ്പെട്ട
+            വശമാണ്. ആനന്ദ വശത്തിന് പുറമേ, സന്തതികൾ പതുക്കെയും സ്ഥിരമായും ഒരു
+            വെല്ലുവിളിയായി മാറുകയാണ്.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="section section5">
+      <div class="container">
+        <div class="box2">
+          <p>
+            IVF, കൃത്രിമ ബീജസങ്കലനം, ടെസ്റ്റ് ട്യൂബ് കുഞ്ഞുങ്ങൾ എന്നിവയ്ക്കായി
+            ബോംബ് ചുമത്തുന്ന ഫെർട്ടിലിറ്റി സെന്ററുകൾ ഉണ്ട്. ഏറ്റവും സാധാരണമായ
+            ആരോഗ്യ പ്രശ്നങ്ങളിൽ ഉദ്ധാരണക്കുറവ് (ED), അകാല സ്ഖലനം (PE), കുറഞ്ഞ
+            കാഠിന്യം, ലിബിഡോ അഭാവം, ഫെർട്ടിലിറ്റി അഭാവം, കുറഞ്ഞ ബീജസംഖ്യ,
+            ബീജത്തിന്റെ ഗുണനിലവാരക്കുറവ്, പൊതുവായ ക്ഷീണം എന്നിവ ഉൾപ്പെടുന്നു.
+            സ്‌പോർട്‌സിനെ സ്നേഹിക്കുന്ന കാര്യത്തിൽ സ്ത്രീകൾ വെറും നിഷ്‌ക്രിയ
+            പങ്കാളികളാണ്, പുരുഷന്മാർ ഭയാനകമായ തോതിൽ പ്രകടനം കാഴ്ചവയ്ക്കുന്നു,
+            വിവാഹമോചന കേസുകളിൽ കുത്തനെ വർദ്ധനവുണ്ടാകുന്നു. ഈ ശാരീരിക വശങ്ങൾക്ക്
+            പുറമേ, ഇത് അപകർഷതാബോധവും അതിന്റെ ഫലമായി ഉണ്ടാകുന്ന മാനസിക മാനസിക
+            തടസ്സങ്ങളും സൃഷ്ടിക്കുന്നു.
+          </p>
+        </div>
+        <div class="box1">
+          <p>
+            മുകളിൽ പറഞ്ഞ പ്രശ്‌നങ്ങൾ / അസാധാരണത്വങ്ങൾ പരിഹരിക്കുന്നതിന് ഇന്ന്
+            വിപണിയിൽ ധാരാളം ഫോർമുലേഷനുകൾ ലഭ്യമാണ്. നിങ്ങളിൽ പലരും നിരാശ
+            അനുഭവിച്ചിട്ടുണ്ടാകും. പക്ഷേ ഉപേക്ഷിക്കരുത്. നിങ്ങളെ രക്ഷിക്കുകയും ഈ
+            പ്രശ്‌നങ്ങളിൽ നിന്ന് നിങ്ങളെ മോചിപ്പിക്കുകയും, പ്രതീക്ഷയുടെ
+            കിരണത്തിലേക്ക് നിങ്ങളെ തുറന്നുകാട്ടുകയും, നിങ്ങളെ ഊർജ്ജസ്വലരും
+            യുവത്വവും ഉള്ളവരാക്കി മാറ്റുകയും ചെയ്യുന്ന രുചികരമായ കാപ്പിയുടെ
+            രൂപത്തിലുള്ള ഒരു അതുല്യമായ സംയോജനം ഞങ്ങൾ നിങ്ങൾക്ക്
+            അവതരിപ്പിക്കുന്നു. ഏറ്റവും പ്രധാനമായി ഇത് നിങ്ങളുടെ ആത്മവിശ്വാസം
+            വീണ്ടെടുക്കുന്നു. അരങ്ങിൽ എത്തുന്നതിനുമുമ്പ് ഒരു കാപ്പി എന്ന ആശയം
+            അവളെ ആനന്ദത്തിൽ ഞരങ്ങാൻ പ്രേരിപ്പിക്കുന്നില്ലേ ?
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <p style="margin: 20px auto">
+        ഞങ്ങളുടെ ഉൽപ്പന്നം, ചേരുവകൾ, അത് എങ്ങനെ പ്രവർത്തിക്കുന്നു? എങ്ങനെ
+        ഉപയോഗിക്കാം?, വില വിശദാംശങ്ങൾ എന്നിവയെക്കുറിച്ച്
       </p>
-    </section>
+      <a
+        href="https://borneoherbs.in/mal2"
+        style="margin: auto"
+        class="btn start-btn"
+        ><span></span>Learn More <span></span
+      ></a>
+    </div>
+
+    <!-- Section 11 -->
+    <div class="section section-11" id="#contact">
+      <div class="container">
+        <div class="box1">
+          <h3>ബന്ധപ്പെടുക</h3>
+          <div class="emails">
+            <h4>ഇമെയിൽ :</h4>
+            <p>
+               info@borneoherbs.in / <br />
+              burhan@borneoherbs.in
+            </p>
+          </div>
+          <div class="phones">
+            <h4>ഫോൺ :</h4>
+            <p>
+              <a
+                style="text-decoration: none; color: black"
+                href="tel:+918078323650"
+                >8078323650</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="box2">
+          <form
+            id="contactForm"
+            method="post"
+            action="https://script.google.com/macros/s/AKfycbypFaif3nmPKFjB9k5e6cB4HfEsDHzR8bZAduEujhBFoS7QZmoGdGxWak2yw8i3MIJ3/exec"
+          >
+            <input type="text" name="Name" placeholder="Name" id="name" />
+            <input
+              type="tel"
+              name="Phone"
+              id="phone"
+              placeholder="Your Contact No"
+            />
+            <input
+              type="text"
+              name="Subject"
+              id="subject"
+              placeholder="Subject"
+            />
+            <textarea
+              name="Messages"
+              id="message"
+              placeholder="Message"
+            ></textarea>
+            <button class="btn start-btn" type="submit" id="submitBtn">
+              <span></span>Submit <span></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Section 11 -->
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="address">
+          <img src="./images/logof 1.png" alt="logo" />
+          <p>
+            Kopi Panggung Al Ambiak எங்களின் இந்த தயாரிப்பு அற்புதமான பலனை
+            தரக்கூடியது, முழு திருப்திக்கு உத்தரவாதம், தாம்பத்ய செயல்பாடுகளில்
+            வெற்றிகரமான பலனடைந்ததாக பலராலும் பாராட்டப்பட்டது
+          </p>
+        </div>
+        <div class="links">
+          <h3>Links</h3>
+          <ul>
+            <li>
+              <a href="#Home"><i class="fa-solid fa-angle-right"></i>HOME</a>
+            </li>
+            <li>
+              <a href="https://borneoherbs.in/malayalam"
+                ><i class="fa-solid fa-angle-right"></i>INGREDIENTS</a
+              >
+            </li>
+            <li>
+              <a href="https://borneoherbs.in/malayalam"
+                ><i class="fa-solid fa-angle-right"></i>HOW TO USE ?</a
+              >
+            </li>
+            <li>
+              <a href="#Howwork"
+                ><i class="fa-solid fa-angle-right"></i>HOW ITS WORK ?</a
+              >
+            </li>
+            <li>
+              <a href="#buy"
+                ><i class="fa-solid fa-angle-right"></i>HOW TO BUY ?</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-angle-right"></i>CONTACT US</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="social">
+          <h3>SOCIAL</h3>
+          <ul>
+            <li class="social-icon whatapp">
+              <a href="https://wa.me/918078323650"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+            <li class="social-icon insta">
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li class="social-icon youtube">
+              <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h3>CONTACT US</h3>
+          <div class="emails">
+            <h4>Email :</h4>
+            <p>
+              info@borneoherbs.in / <br />
+              burhan@borneoherbs.in
+            </p>
+          </div>
+          <div class="phones">
+            <h4>Phone :</h4>
+            <p>
+              <a
+                style="text-decoration: none; color: black"
+                href="tel:+918078323650"
+                >8078323650</a
+              >
+            </p>
+          </div>
+          <div class="posts">
+            <h4>Post Box No :</h4>
+            <p>10, Chennai - 600 043</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
     <!-- Float btn  -->
     <div class="float-container" id="floatHeader">
       <div class="left">
@@ -300,15 +328,16 @@
         ></a>
       </div>
       <div class="right">
+        <a
+          href="https://51pejg-ia.myshopify.com/products/kalimantan-natural-herbal-coffee-pack-of-10"
+          class="buy"
+          >buy Now</a
+        >
         <a href="#" class="up"><i class="fa-solid fa-angle-up"></i></a>
       </div>
     </div>
     <!-- Float btn  -->
-
-    <script>
-      function buyNow() {
-        window.location.href = "https://borneoherbs.in/shop/";
-      }
-    </script>
+    <!-- js -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
